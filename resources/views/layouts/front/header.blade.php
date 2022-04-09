@@ -57,6 +57,10 @@
             margin-left: 1rem !important;
         }
 
+        #navbarCollapse{
+            direction: rtl;
+        }
+
     </style>
 
     @toastr_css

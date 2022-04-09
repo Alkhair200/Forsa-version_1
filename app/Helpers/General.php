@@ -1,4 +1,5 @@
 <?php
+use App\Models\Job;
 
 function dataFilter($data)
 {
@@ -18,6 +19,27 @@ function typeTime()
     $data = [
         '1'=>'دوام كامل',
         '2' => 'دوام جزئى',
+    ];
+
+    return $data;
+}
+
+function location()
+{
+    $data = [
+        "الخرطوم",
+        "امدرمان",
+    ];
+
+    return $data;
+}
+
+function allJobs()
+{
+    $data = [
+        "مبرمج PHP",
+        "مبرمج javaScript",
+        "IT Support",
     ];
 
     return $data;

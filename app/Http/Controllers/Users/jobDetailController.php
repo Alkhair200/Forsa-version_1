@@ -9,14 +9,16 @@ use App\Http\Requests\StoreEnteryJob;
 use App\Models\EnteryJob;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use App\Models\Commpany_info;
+use Illuminate\Support\Facades\Auth;
 
 class jobDetailController extends Controller
 {
     public function jobDetail($id)
     {
         $job = Job::findOrFail($id);
-        $user_id = auth()->user()->id;
-        return view('job-detail',compact('job','user_id'));
+        $company_id = $job->commpany_id;
+        return view('job-detail',compact('job','company_id'));
     }
 
     public function store(StoreEnteryJob $request)
@@ -35,7 +37,7 @@ class jobDetailController extends Controller
             $enteryJob->phone = $request_data['phone'];
             $enteryJob->description = $request_data['description'];
             $enteryJob->job_id = $request_data['job_id'];
-            $enteryJob->user_id = $request_data['user_id'];
+            $enteryJob->company_id = $request_data['company_id'];
             $enteryJob->cv = $fileName;
             $enteryJob->save();
 
@@ -49,9 +51,12 @@ class jobDetailController extends Controller
 
     function show()
     {
-        $id = auth()->user()->id;
-        $allJobEnery = EnteryJob::where('user_id',$id)->paginate(6);
-        return view('entery-job',compact('allJobEnery'));
+        $user_id = Auth::user()->id;
+        $jobs = Job::where('user_id',$user_id)->first();
+        $company_id = $jobs->commpany_id;
+
+        $allJobEnery = EnteryJob::where('company_id',$company_id)->paginate(6);
+        return view('entery-job',compact('allJobEnery','jobs'));
     }
 
     public function download($id)

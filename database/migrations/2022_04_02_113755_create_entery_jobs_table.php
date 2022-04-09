@@ -17,11 +17,11 @@ class CreateEnteryJobsTable extends Migration
             $table->longText('description');
             $table->string('cv');
             $table->unsignedBigInteger('job_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('company_id');
             $table->timestamps();
 
             $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('company_id')->references('id')->on('commpany_info')->onDelete('cascade');
 
         });
     }

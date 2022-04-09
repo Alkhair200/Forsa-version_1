@@ -1,7 +1,7 @@
 <?php
 return [
 
-    'smart-vision-cener' => 'مركز الرؤية الذكي',
+    'forsa' => 'فرصه للتوظيف',
     'welcome-back' => 'مرحبا بعودتك',
     'welcome-to' => 'مرحباً بكم في',
     'courses' => 'الدورات',

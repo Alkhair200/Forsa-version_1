@@ -1,6 +1,6 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-    <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+    <a href="{{ url('/') }}" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
         <h1 class="m-0 text-primary">FORSA</h1>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -10,15 +10,13 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
         @guest
             @if (Route::has('login'))
-                <a href="{{ route('login') }}" class="btn btn-primary rounded-0 py-4 px-lg-5  d-lg-block">دخول<i
-                        class="fa fa-arrow-right ms-3"></i></a>
+                <a href="{{ route('login') }}" class="btn btn-primary rounded-0 py-4 px-lg-5  d-lg-block"><i
+                        class="fa fa-arrow-left ms-3"></i>دخول</a>
             @endif
 
 
             @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="btn btn-primary rounded-0 py-4 px-lg-5  d-lg-block" href="{{ route('register') }}">تسجيل</a>
-                </li>
+                    <a class="btn btn-primary rounded-0 py-4 px-lg-5  d-lg-block btn-register" href="{{ route('register') }}">تسجيل</a>
             @endif
         @else
             <li class="nav-item dropdown">

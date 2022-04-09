@@ -3,7 +3,11 @@
 
 @stop
 @section('css')
-
+<style>
+    .i-data{
+        margin-left: 6px;
+    }
+</style>
 @stop
 @section('content')
 
@@ -25,7 +29,7 @@
                                     المثالية التي تستحقها</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2 mystl">يمكنك الآن البحث بسهولة عن الوظائف دون
                                     الحاجة إلى الجلوس على جهاز الكمبيوتر الخاص بك فقط من خلال هاتفك. </p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft ">الوظائف</a>
+                                <a href="{{ route('all-job') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft ">الوظائف</a>
                                 <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">إقرا المزيد</a>
                             </div>
                         </div>
@@ -43,7 +47,7 @@
                                     أفضل وأسرع </h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2 mystl">قدم بسهولة للوظيفة المناسبة لك فقط
                                     بنقرة واحدة! يُظهر التقديم السريع الوظائف الموصى بها بناءً على أحدث عمليات البحث . </p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">الوظائف</a>
+                                <a href="{{ route('all-job') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">الوظائف</a>
                                 <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">إقرا المزيد</a>
                             </div>
                         </div>
@@ -192,7 +196,7 @@
 
                                         <a class="btn btn-primary" href="{{ route('job-detail',$item->id) }}"> التقديم للوظيفة</a>
                                     </div>
-                                    <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>{{ date_format($item->created_at,'Y-m-d') }}</small>
+                                    <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2 i-data"></i>{{ date_format($item->created_at,'Y-m-d') }}</small>
                                 </div>
                             </div>
                         </div>

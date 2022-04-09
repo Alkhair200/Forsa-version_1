@@ -39,16 +39,13 @@ Route::post('intery-job', [App\Http\Controllers\Users\jobDetailController::class
 Route::get('all-intery-job', [App\Http\Controllers\Users\jobDetailController::class, 'show'])->name('all-intery-job');
 Route::get('dwonload/{id}', [App\Http\Controllers\Users\jobDetailController::class, 'download'])->name('dwonload');
 Route::get('destroy/{id}', [App\Http\Controllers\Users\jobDetailController::class, 'destroy'])->name('destroy');
-
-
-
 Route::post('entery-job', [App\Http\Controllers\Users\jobDetailController::class, 'store'])->name('intery-job');
-
-
 
 Route::resource('profile',App\Http\Controllers\Users\UserProfileController::class)->except('show');
 Route::post('single-store', [App\Http\Controllers\Users\UserJobController::class, 'singleStore'])->name('single-store');
 Route::get('active-job/{active}', [App\Http\Controllers\Users\UserJobController::class, 'getByStatus'])->name('active-job');
 
+Route::post('all-job', [App\Http\Controllers\Users\SearchController::class, 'search'])->name('search');
 
-Route::get('/{page}', 'App\Http\Controllers\AdminController@index');
+
+// Route::get('/{page}', 'App\Http\Controllers\AdminController@index');

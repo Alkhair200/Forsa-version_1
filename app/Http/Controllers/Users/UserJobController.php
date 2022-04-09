@@ -191,4 +191,5 @@ class UserJobController extends Controller
         $jobs = Job::where('status',1)->paginate(3);
         return view('jobs',compact('jobs'));
     }
+
 }
