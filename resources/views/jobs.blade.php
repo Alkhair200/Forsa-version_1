@@ -75,40 +75,33 @@
 
                     <div class="tab-content ">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
-
                             @foreach ($jobs as $item)
-                                <div class="job-item p-4 mb-4 mystl">
-                                    <div class="row g-4">
-                                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                            <img class="flex-shrink-0 img-fluid border rounded"
-                                                src="{{ $item->commpany->image_path }}" alt="صوره"
-                                                style="width: 80px; height: 80px;">
-                                            <div class="text-start ps-4">
-                                                <h5 class="mb-3 mystl cairo">&nbsp;&nbsp; {{ $item->type_job }}</h5>
-                                                <span class="text-truncate me-3"><i
-                                                        class="fa fa-map-marker-alt text-primary me-2"></i>&nbsp;
-                                                    {{ $item->location }}</span>
-                                                <span class="text-truncate me-3"><i
-                                                        class="far fa-clock text-primary me-2"></i>&nbsp;{{ $item->getTypeTime() }}</span>
-                                                <span class="text-truncate me-0"><i
-                                                        class="far fa-money-bill-alt text-primary me-2"> </i>&nbsp;
-                                                    {{ $item->amount }}
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                            <div class="d-flex mb-3">
-
-                                                <a class="btn btn-primary" href="{{ route('job-detail', $item->id) }}">
-                                                    التقديم للوظيفة</a>
-                                            </div>
-                                            <small class="text-truncate"><i
-                                                    class="far fa-calendar-alt text-primary me-2"></i>
-                                                {{ date_format($item->created_at, 'Y-m-d') }}
+                            <div class="job-item p-4 mb-4 mystl">
+                                <div class="row g-4">
+                                    <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid border rounded"
+                                            src="{{ $item->commpany->image_path }}" alt="صوره"
+                                            style="width: 80px; height: 80px;">
+                                        <div class="text-start ps-4">
+                                            <h5 class="mb-3 mystl cairo">&nbsp;&nbsp; {{ $item->type_job }}</h5>
+                                            <span class="text-truncate me-3"><i
+                                                    class="fa fa-map-marker-alt text-primary me-2"></i>&nbsp; {{ $item->location }}</span>
+                                            <span class="text-truncate me-3"><i
+                                                    class="far fa-clock text-primary me-2"></i>&nbsp; {{ $item->getTypeTime() }}</span>
+                                            <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2">
+                                                </i>&nbsp; {{ $item->amount }} </span>
                                         </div>
                                     </div>
+                                    <div
+                                        class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                        <div class="d-flex mb-3">
+    
+                                            <a class="btn btn-primary" href="{{ route('job-detail',$item->id) }}"> التقديم للوظيفة</a>
+                                        </div>
+                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2 i-data"></i>&nbsp;{{ date_format($item->created_at,'Y-m-d') }}</small>
+                                    </div>
                                 </div>
+                            </div>
                             @endforeach
                             {{$jobs->appends(request()->query())->links('vendor.pagination.custom')}}
                         @else

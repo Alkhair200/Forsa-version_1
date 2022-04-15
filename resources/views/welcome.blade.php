@@ -196,7 +196,7 @@
 
                                         <a class="btn btn-primary" href="{{ route('job-detail',$item->id) }}"> التقديم للوظيفة</a>
                                     </div>
-                                    <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2 i-data"></i>{{ date_format($item->created_at,'Y-m-d') }}</small>
+                                    <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2 i-data"></i>&nbsp; {{ date_format($item->created_at,'Y-m-d') }}</small>
                                 </div>
                             </div>
                         </div>

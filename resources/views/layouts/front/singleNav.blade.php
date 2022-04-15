@@ -6,18 +6,37 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
+
+        <div class="small-link">
+            <a href="/" class="nav-item nav-link"> العودة الي القائمة الرئيسية </a>
+            </div>
+
+        <div class="navbar-nav ms-auto p-4 p-lg-0 big-link">
             <a href="/" class="nav-item nav-link "> العودة الي القائمة الرئيسية </a>
         </div>
 
     @guest
     @if (Route::has('login'))
+
+    <div class="small-link">
+        <a href="{{ route('login') }}" class="nav-item nav-link">الدخول</a>
+        </div>
+
+        <div class="big-link">
         <a href="{{ route('login') }}" class="btn btn-primary rounded-0 py-4 px-lg-5  d-lg-block"><i
                 class="fa fa-arrow-left ms-3"></i>الدخول</a>
+        </div>
     @endif
 
     @if (Route::has('register'))
+
+    <div class="small-link">
+        <a class="nav-item nav-link" href="{{ route('register') }}">تسجيل</a>
+        </div>
+
+        <div class="big-link">
             <a class="btn btn-primary rounded-0 py-4 px-lg-5  d-lg-block" href="{{ route('register') }}">تسجيل</a>
+        </div>
     @endif
 @else
     <li class="nav-item dropdown">

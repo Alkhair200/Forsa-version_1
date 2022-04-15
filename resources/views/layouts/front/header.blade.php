@@ -61,6 +61,22 @@
             direction: rtl;
         }
 
+        .small-link {
+            display: none;
+        }
+        .dropdown:hover .dropdown-menu{
+            display: block;
+        }
+
+        @media only screen and (max-width:991px) {
+        .big-link {
+            display: none;
+        }
+        .small-link {
+            display: block;
+        }
+    }
+
     </style>
 
     @toastr_css

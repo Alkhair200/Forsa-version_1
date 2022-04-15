@@ -49,3 +49,48 @@ Route::post('all-job', [App\Http\Controllers\Users\SearchController::class, 'sea
 
 
 // Route::get('/{page}', 'App\Http\Controllers\AdminController@index');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <div class="small-link">
+// <a href="/" class="nav-item nav-link"> العودة الي القائمة الرئيسية </a>
+// </div>
+
+
+
+// <div class="small-link">
+// <a href="{{ route('login') }}" class="nav-item nav-link">الدخول</a>
+// </div>
+
+
+// <div class="small-link">
+// <a class="nav-item nav-link" href="{{ route('register') }}">تسجيل</a>
+// </div>

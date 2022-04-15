@@ -34,6 +34,15 @@
             box-shadow: none;
             border: 1px solid #00B074;
         }
+
+        .card{
+            text-align: right;
+            direction: rtl;
+        }
+
+        .card-body{
+            border: 1px solid #00B074;
+        }
         
 
     </style>
@@ -64,13 +73,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">دخول</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">تسجيل</a>
                                 </li>
                             @endif
                         @else
